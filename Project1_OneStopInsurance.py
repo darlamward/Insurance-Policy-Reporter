@@ -1,14 +1,8 @@
 #  One Stop Insurance Company's program to enter and calculate new insurance policy information for its customers
 #  Completed by Darla Ward
-#  Completed on Aug 2, 2022
+#  Completed on Aug 3, 2022
 
 import datetime
-
-def FDollar2String(DollarValue):
-
-    DollarValueStr = "${:,.2f}".format(DollarValue)
-
-    return DollarValueStr
 
 def FDollar2(DollarValue):
 
