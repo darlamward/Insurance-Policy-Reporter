@@ -143,8 +143,6 @@ while True:
     print("=" * 60)
     print()
 
-    PolicyNum += 1
-
     f = open('Policies.dat', 'a')
     f.write("{}, ".format(PolicyNum))
     f.write("{}, ".format(PolicyDateDsp))
@@ -188,6 +186,7 @@ while True:
 
     print("Policy processed and saved!")
     print()
+    PolicyNum += 1
 
     AnotherPolicy = input("Would you like to enter another policy(Y/N)? ").upper()
     if AnotherPolicy == "Y":
@@ -247,8 +246,8 @@ if Reports == 'Y':
         TotalPremiumAcc += TotalInsurancePremiumReport
     f.close()
     print("=" * 61)
-    print(f"Total Policies: {TotalNumPolicies:^3d}          {FDollar2(InsurancePremiumAcc):>10s}  "
-          f"{FDollar2(ExtraCostsAcc):>10s}  {FDollar2(TotalPremiumAcc):>10s}")
+    print(f"Total Policies: {TotalNumPolicies:^3d}          {FDollar2(InsurancePremiumAcc):>10s} "
+          f"{FDollar2(ExtraCostsAcc):>10s} {FDollar2(TotalPremiumAcc):>10s}")
     print()
     print()
     print("{:^70s}".format("Monthly Payment Listing"))
@@ -277,8 +276,8 @@ if Reports == 'Y':
 
         if MPaymentOptionReport == "M":
             MMonthlyPaymentReport = float(Info[9].strip())
-            print(f" {PolicyNum:4d}  {CustFirstName:10s} {CustLastName:10s} {FDollar2(MTotalInsurancePremiumReport):>9s}"
-                f"  {FDollar2(MHSTReport):>7s}  {FDollar2(MTotalCostReport):>9s}  {FDollar2(MMonthlyPaymentReport):>9s}")
+            print(f" {PolicyNum:4d}  {CustFirstName:10s} {CustLastName:10s}{FDollar2(MTotalInsurancePremiumReport):>9s}"
+                f"   {FDollar2(MHSTReport):>7s}  {FDollar2(MTotalCostReport):>9s}  {FDollar2(MMonthlyPaymentReport):>9s}")
             MonthlyTotalNumPolicies += 1
             MonthlyTotalPremiumAcc += MTotalInsurancePremiumReport
             TotalHSTAcc += MHSTReport
@@ -288,6 +287,7 @@ if Reports == 'Y':
             continue
     f.close()
     print("=" * 70)
-    print(f"Total Policies: {MonthlyTotalNumPolicies:^3d}       {FDollar2(MonthlyTotalPremiumAcc):>10s} "
-          f"{FDollar2(TotalHSTAcc):>9s}  {FDollar2(TotalCostAcc):>10s} {FDollar2(TotalMonthlyPaymentAcc):>10s}")
+    print(f"Total Policies: {MonthlyTotalNumPolicies:^3d}        {FDollar2(MonthlyTotalPremiumAcc):>10s} "
+          f"{FDollar2(TotalHSTAcc):>9s} {FDollar2(TotalCostAcc):>10s} {FDollar2(TotalMonthlyPaymentAcc):>10s}")
+print()
 print("{:^60s}".format("Program Finished"))
